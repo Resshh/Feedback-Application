@@ -17,7 +17,6 @@ const feedbackSchema = new mongoose.Schema({
         min: 0,
         max: 5
     }
-
 });
 
 module.exports = mongoose.model("feedback", feedbackSchema);

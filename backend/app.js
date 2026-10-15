@@ -14,7 +14,7 @@ db();
 
 app.use(express.json());
 app.use('/course','courseSchema')
-
+app.use('/feedback','feedbackSchema')
 
 const PORT = process.env.PORT || 3000;
 

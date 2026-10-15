@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const courseSchema = new mongoose.Schema({
-    course_id: {
+    id: {
         type: Number,
         required: true
     },
@@ -14,8 +14,7 @@ const courseSchema = new mongoose.Schema({
 
     course_duration: {
         type: Number,
-        required: true,
-        match: /^https?:\/\/.+/
+        required: true
     },
 
     rating: {
@@ -23,7 +22,7 @@ const courseSchema = new mongoose.Schema({
         required: true,
         min: 0,
         max: 5
-    }
+    },
 
 });
 
