@@ -3,25 +3,20 @@ const mongoose = require("mongoose");
 const courseSchema = new mongoose.Schema({
     id: {
         type: Number,
-        required: true
+        required: true,
+        unique: true
     },
 
     course_name: {
         type: String,
         required: true,
-        min: 1
+        unique: true
     },
 
+    // duration in weeks
     course_duration: {
         type: Number,
         required: true
-    },
-
-    rating: {
-        type: Number,
-        required: true,
-        min: 0,
-        max: 5
     },
 
 });

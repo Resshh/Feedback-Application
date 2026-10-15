@@ -1,20 +1,19 @@
 const express = require("express");
-const mongoose=require("mongoose");
+const cors = require("cors");
 require("dotenv").config();
 
 const db = require("./connection");
 const app = express();
 
-const feedbackRoutes=require('./routes/feedbackRoutes')
-const courseRoutes=require('./routes/courseRoutes')
+const feedbackRoutes = require('./routes/feedbackRoutes')
+const courseRoutes = require('./routes/courseRoutes')
 
-const courseModel=require('./models/courseModel')
-const feedbackModel=require('./models/feedbackModel')
 db();
 
+app.use(cors());
 app.use(express.json());
-app.use('/course','courseSchema')
-app.use('/feedback','feedbackSchema')
+app.use('/course', courseRoutes)
+app.use('/feedback', feedbackRoutes)
 
 const PORT = process.env.PORT || 3000;
 
