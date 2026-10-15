@@ -1,5 +1,5 @@
 const express = require("express");
-
+const mongoose=require("mongoose");
 require("dotenv").config();
 
 const db = require("./connection");
@@ -13,6 +13,7 @@ const feedbackModel=require('./models/feedbackModel')
 db();
 
 app.use(express.json());
+app.use('/course','courseSchema')
 
 
 const PORT = process.env.PORT || 3000;
