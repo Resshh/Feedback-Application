@@ -9,7 +9,7 @@ function AddFeedback() {
   });
 
   const handleChange = (e) => {
-    setProduct({
+  setfeedback({
       ...feedback,
       [e.target.name]: e.target.value,
     });
@@ -19,15 +19,15 @@ function AddFeedback() {
     e.preventDefault();
 
 
-    if (product.rating < 0 || product.rating > 5) {
+    if (feedback_rating.rating < 0 || feedback.rating > 5) {
       alert("Rating must be between 0 and 5");
       return;
     }
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/products",
-        product
+        "http://localhost:3000",
+        feedback
       );
 
       console.log(response.data);
@@ -35,10 +35,9 @@ function AddFeedback() {
       alert("feedback Added Successfully");
 
       setProduct({
-        title: "",
-        image: "",
-        price: "",
-        rating: "",
+        course_name:"",
+        feedback_comment:"",
+        rating: ""
       });
     } catch (error) {
       alert(error.response?.data?.message || "Something went wrong");
