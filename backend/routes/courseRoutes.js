@@ -1,6 +1,10 @@
 const express=require('express')
 const router=express('router')
 const mongoose=require('mongoose')
+
+
+const course= require("../models/courseModel");
+
 // post the course
 router.post("/", async (req, res) => {
 

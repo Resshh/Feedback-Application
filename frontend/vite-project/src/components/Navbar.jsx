@@ -1,16 +1,14 @@
 import { Link } from "react-router-dom";
 
-function Navbar1() {
+function Navbar() {
   return (
     <nav className="navbar">
 
-      <h2>Product Manager</h2>
+      <h2>Feedback Application</h2>
 
       <div>
 
-        <Link to="/">Home</Link>
-
-        <Link to="/add">Add Product</Link>
+        <Link to="/add">Add Feedback</Link>
 
       </div>
 
@@ -18,4 +16,4 @@ function Navbar1() {
   );
 }
 
-export default Navbar1;
+export default Navbar;
